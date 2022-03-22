@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model CoursePhase1
+
+
+<div class="card">
+    <div class="card-title">
+        <h6>Attachment Details</h6>
+    </div>
+    <div class="card-body">
+        @*Attachement*@
+        <div class="row">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-xs-3 form-floating mb-3">
+                <p>1.Brief Note about why you want to become SSY Teacher:</p>
+                @Html.TextAreaFor(e => e.BriefNote, new { @class = "form-control", id = "txt_brief_note", placeholder = "Brief Note" })
+                <label for="txt_brief_note" class="lbl-oath">Brief Note</label>
+                @Html.ValidationMessageFor(e => e.BriefNote, "", new { @class = "validation-message" })
+            </div>
+            <div class="col-xl-2 col-lg-3 col-md-3 col-xs-3" id="rb_yes_no">
+                @Html.RadioButtonFor(e => e.BriefNote, "Yes",new { id = "rb_yes_note" })Yes
+                @Html.RadioButtonFor(e => e.BriefNote, "No",new { id = "rb_no_note" })No
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-xs-3">
+                <p>2.Certificate of In-charge teacher and recommending teacher:</p>
+                <input type="file" class="form-control" id="file_certificate" />
+                @Html.ValidationMessageFor(e => e.Certificate, "", new { @class = "validation-message" })
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-xs-3" id="rb_yes_no">
+                @Html.RadioButtonFor(e => e.Certificate, "Yes",new { id = "rb_yes_certificate" })Yes
+                @Html.RadioButtonFor(e => e.Certificate, "No",new { id = "rb_no_certificate" })No
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-xl-9 col-lg-9 col-md-9 col-xs-3">
+                <p>3.Recent passport size photos with name written behind:</p>
+                <input type="file" class="form-control" id="upload_certificate" />
+                <span class="spn-validation-error"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-xs-3" id="rb_yes_no">
+                @Html.RadioButtonFor(e => e.Photo, "Yes",new { id = "rb_yes_photo" })Yes
+                @Html.RadioButtonFor(e => e.Photo, "No",new { id = "rb_no_photo" })No            
+            </div>
+        </div>
+        <div class="row fourth-attach mt-3">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-xs-3 fourth-attach-text mt-4">
+                <p>4.Oath taking Ceremony held on</p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3 form-floating mb-3 div-oath">
+                @Html.TextBoxFor(e => e.OathCeremDate, new { @class = "form-control date-picker", id = "txt_oathceremdate", placeholder = "Date" })
+                <label for="txt_oathceremdate" class="date-picker lbl-oath">Date</label>
+                <span class="spn-validation-error"></span>
+            </div>
+            
+            <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3 mb-3 div-oath">               
+                <div class="row">
+                    <div class="col-2 mt-4">
+                        <p class="p-at">at</p>
+                    </div>
+                    <div class="col  form-floating">
+                        @Html.TextBoxFor(e => e.OathCeremPlace, new { @class = "form-control", id = "txt_oathceremplace", placeholder = "Place", @onkeypress = "fnAlphabetWithSpace(event)" })
+                        <label for="txt_oathceremplace" class="lbl-oath">Place</label>
+                        <span class="spn-validation-error"></span>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-xs-3  fourth-attach-textfield">
+                <p>in the Presence of Parent teacher Sri/Smt</p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3 form-floating mb-3 div-oath">
+                @Html.TextBoxFor(e => e.OathCeremName, new { @class = "form-control", id = "txt_oathceremname", placeholder = "Name", @onkeypress = "fnAlphabetWithSpace(event)" })
+                <label for="txt_oathceremname" class="lbl-oath">Name</label>
+                <span class="spn-validation-error"></span>
+            </div>
+        </div>
+        @*Place and Date*@
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3  form-floating mb-3">
+                    @Html.TextBoxFor(e => e.Place1, new { @class = "form-control", id = "txt_place1", placeholder = "Place", autocomplete = "none", @onkeypress = "fnAlphabetWithSpace(event)" })
+                    @*@Html.LabelFor(e => e.Place1, new { @for = "txt_place1" })*@
+                    <label for="txt_place1" class="txt-place1">Place</label>
+                    <span class="spn-validation-error"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3 form-floating mb-3">
+                    @Html.TextBoxFor(e => e.Date, new { @class = "form-control date-picker", id = "txt_date1", placeholder = "Date", autocomplete = "none" })
+                    @*@Html.LabelFor(e => e.Date, new { @for = "txt_date" })*@
+                    <label class="date-picker txt-date1" for="txt_date1">Date</label>
+                    <span class="spn-validation-error"></span>
+                </div>
+            </div>
+        @*Remark*@
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3 div-remark">
+                <h6>Remarks by TTC Registering Teacher</h6>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3"></div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-xs-3">
+                <input type="file" class="form-control" id="upload_signature" />
+                <h6>Signature of Applicant</h6>
+                <span class="spn-validation-error"></span>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+
+

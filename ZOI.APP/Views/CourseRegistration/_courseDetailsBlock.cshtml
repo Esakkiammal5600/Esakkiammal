@@ -1,0 +1,194 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@model CoursePhase1
+
+        <div class="card">
+            <div class="card-title">
+                <h5>Course Details</h5>
+            </div>
+            <div class="card-body">
+
+                @*Course and place*@
+                <div class="course-title course-date">
+                    <p >Date Of SSY Course</p>
+                </div>
+                <div class="row div-course-Detail">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.CourseFrom, new { @class = "form-control date-picker", id = "txt_course_from", placeholder = "Course from", autocomplete = "off" })
+                            @*@Html.LabelFor(e => e.CourseFrom, new { @for = "txt_course_from" })*@
+                            <label for="txt_course_from" class="date-picker">From</label>
+                            @Html.ValidationMessageFor(e => e.CourseFrom,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.CourseTo, new { @class = "form-control date-picker", id = "txt_course_to", placeholder = "Course to", autocomplete = "off" })
+                            @*@Html.LabelFor(e => e.CourseTo, new { @for = "txt_course_to" })*@
+                            <label for="txt_course_to" class="date-picker">To</label>
+                            @Html.ValidationMessageFor(e => e.CourseTo,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Place, new { @class = "form-control", id = "txt_place", placeholder = "Place", autocomplete = "off", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.Place, new { @for = "txt_place" })*@
+                            <label for="txt_place">Place</label>
+                            @Html.ValidationMessageFor(e => e.Place,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.MainTeacherName, new { @class = "form-control", id = "txt_main_teacher_name", placeholder = "Main Teacher Name", autocomplete = "off", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.Place1, new { @for = "txt_place1" })*@
+                            <label for="txt_main_teacher_name">Main Teacher Name</label>
+                            @Html.ValidationMessageFor(e => e.Place1,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.InitiationDate, new { @class = "form-control date-picker", id = "txt_initiation_date", placeholder = "Initiation Date", autocomplete = "off" })
+                            @*@Html.LabelFor(e => e.InitiationDate, new { @for = "txt_initiation_date" })*@
+                            <label for="txt_initiation_date" class="date-picker">Initiation Date</label>
+                            @Html.ValidationMessageFor(e => e.InitiationDate,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.InitiatiorName, new { @class = "form-control", id = "txt_initiator_name", placeholder = "Initiator Name", autocomplete = "off", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.InitiatiorName, new { @for = "txt_initiator_name" })*@
+                            <label for="txt_initiator_name">Initiator Name</label>
+                            @Html.ValidationMessageFor(e => e.InitiatiorName,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                @*Period and place*@
+                <div class="course-title">
+                    <p>AMC Period and Place</p>
+                </div>
+                <div class="row div-course-Detail">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCFrom, new { @class = "form-control date-picker", id = "txt_amc_from", placeholder = "From", autocomplete = "off" })
+                            @*@Html.LabelFor(e => e.CourseFrom, new { @for = "txt_course_from" })*@
+                            <label for="txt_amc_from" class="date-picker">From</label>
+                            @Html.ValidationMessageFor(e => e.AMCFrom,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCTo, new { @class = "form-control date-picker", id = "txt_amc_to", placeholder = "To", autocomplete = "off" })
+                            @*@Html.LabelFor(e => e.CourseTo, new { @for = "txt_course_to" })*@
+                            <label for="txt_amc_to" class="date-picker">To</label>
+                            @Html.ValidationMessageFor(e => e.AMCTo,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCPlace, new { @class = "form-control", id = "txt_amc_place", placeholder = "Place", autocomplete = "off", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.Place, new { @for = "txt_place" })*@
+                            <label for="txt_amc_place">Place</label>
+                            @Html.ValidationMessageFor(e => e.AMCPlace,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                @*Volunteering*@
+                <div class="course-title">
+                    <p>Volunteering        SSY: </p>
+                </div>
+                <div class="row div-course-Detail">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.SSYFrom1, new { @class = "form-control date-picker", id = "txt_ssy_from2", placeholder = "1.From", autocomplete = "off", @style = "margin-bottom: -5px;" })
+                            @*@Html.LabelFor(e => e.SSYFrom1, new { @for = "txt_ssy_from1" })*@
+                            <label for="txt_ssy_from1" class="date-picker">1.From</label>
+                            @Html.ValidationMessageFor(e => e.SSYFrom1,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.SSYTo1, new { @class = "form-control date-picker", id = "txt_ssy_to2", placeholder = "1.To", autocomplete = "off", @style = "margin-bottom: -8px;" })
+                            @*@Html.LabelFor(e => e.SSYTo1, new { @for = "txt_ssy_to1" })*@
+                            <label for="txt_ssy_to1" class="date-picker">1.To</label>
+                            @Html.ValidationMessageFor(e => e.SSYTo1,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.SSYFrom2, new { @class = "form-control date-picker", id = "txt_ssy_from2", placeholder = "2.From", autocomplete = "off", @style = "margin-bottom: -5px;" })
+                            @*@Html.LabelFor(e => e.SSYFrom2, new { @for = "txt_ssy_from2" })*@
+                            <label for="txt_ssy_from2" class="date-picker">2.From</label>
+                            @Html.ValidationMessageFor(e => e.SSYFrom2,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.SSYTo2, new { @class = "form-control date-picker", id = "txt_ssy_to2", placeholder = "2.To", autocomplete = "off", @style = "margin-bottom: -8px;" })
+                            @*@Html.LabelFor(e => e.SSYTo2, new { @for = "txt_ssy_to2" })*@
+                            <label for="txt_ssy_to2" class="date-picker">2.To</label>
+                            @Html.ValidationMessageFor(e => e.SSYTo2,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-title">
+                    <p> AMC: </p>
+                </div>
+                <div class="row div-course-Detail">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCFrom1, new { @class = "form-control date-picker", id = "txt_amc_from1", placeholder = "1.From", autocomplete = "none", @style = "margin-bottom: -5px;" })
+                            @*@Html.LabelFor(e => e.AMCFrom1, new { @for = "txt_amc_from1" })*@
+                            <label for="txt_amc_from1" class="date-picker">1.From</label>
+                            @Html.ValidationMessageFor(e => e.AMCFrom1,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCTo1, new { @class = "form-control date-picker", id = "txt_amc_to2", placeholder = "1.To", autocomplete = "none", @style = "margin-bottom: -8px;" })
+                            @*@Html.LabelFor(e => e.AMCTo1, new { @for = "txtamc_to1" })*@
+                            <label for="txt_amc_to1" class="date-picker">1.To</label>
+                            @Html.ValidationMessageFor(e => e.AMCTo1,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCFrom2, new { @class = "form-control date-picker", id = "txt_amc_from2", placeholder = "2.From", autocomplete = "none", @style = "margin-bottom: -5px;" })
+                            @*@Html.LabelFor(e => e.AMCFrom2, new { @for = "txt_amc_from2" })*@
+                            <label for="txt_amc_from2" class="date-picker">2.From</label>
+                            @Html.ValidationMessageFor(e => e.AMCFrom2,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.AMCTo2, new { @class = "form-control date-picker", id = "txt_amc_to2", placeholder = "2.To", autocomplete = "none", @style = "margin-bottom: -8px;" })
+                            @*@Html.LabelFor(e => e.AMCTo2, new { @for = "txt_amc_to2" })*@
+                            <label for="txt_amc_to2" class="date-picker">2.To</label>
+                            @Html.ValidationMessageFor(e => e.AMCTo2,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

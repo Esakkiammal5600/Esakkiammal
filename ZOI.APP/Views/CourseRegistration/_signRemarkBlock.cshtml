@@ -1,0 +1,72 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model CoursePhase1
+
+        <div class="card">
+            <div class="card-title">
+                <h5>Recommend Details</h5>
+            </div>
+            <div class="card-body">
+                <div>
+                    <h5 class="recommend-text">Recommending Regional Parent Teacher</h5>
+                    <div class="div-confirm">
+                        <input type="checkbox" id="cb_confirm" />
+                        <p class="p-confirm">I confirm that I have verified and found information provided by the applicant above is true and correct according to my knowledge.  I also confirm that applicant has fulfilled all the prerequisites for the TTC Phase-I and His/her pursuits at home and work place has been checked and found to be suitable for being a teacher of SSY.  He/She may be permitted to participate in TTC Phase-I and I will lead him for further sadhana and training.</p>
+
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12" style="padding-top: 40px">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.RemarkPlace, new { @class = "form-control", id = "txt_remark_place", placeholder = " Place", autocomplete = "none", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.RemarkPlace, new { @for = "txt_remark_place" })*@
+                            <label for="txt_remark_place">Place</label>
+                            @Html.ValidationMessageFor(e => e.RemarkPlace, "", new { @class = "validation-message" })
+                            <span class="spn-validation-error"></span>
+                        </div>
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.RemarkDate, new { @class = "form-control date-picker", id = "txt_remark_date", placeholder = "Date", autocomplete = "none" })
+                            @*@Html.LabelFor(e => e.RemarkDate, new { @for = "txt_remark_place" })*@
+                            <label for="txt_remark_date" class="date-picker">Date</label>
+                            @Html.ValidationMessageFor(e => e.RemarkDate, "", new { @class = "validation-message" })
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <p>Regional Parent Teacher</p>
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Name1, new { @class = "form-control", id = "txt_name1", placeholder = "Name", autocomplete = "none", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.Name1, new { @for = "txt_name1" })*@
+                            <label for="txt_name1">Name</label>
+                            @Html.ValidationMessageFor(e => e.Name1, "", new { @class = "validation-message" })
+                            <span class="spn-validation-error"></span>
+                        </div>
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Region, new { @class = "form-control", id = "txt_region", placeholder = "Region", autocomplete = "none", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @*@Html.LabelFor(e => e.Region, new { @for = "txt_region" })*@
+                            <label for="txt_region">Region</label>
+                            @Html.ValidationMessageFor(e => e.Region, "", new { @class = "validation-message" })
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-remark">
+
+                </div>
+                <div class="row" style="margin-bottom: 30px;">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="text-center margint20">
+                            <!-- <button type="button" class="text-uppercase btn btn-tertiary btn-back" id="zoi_btn_previous_nominee3">Previous</button>  -->
+                            @*<button type="button" class="btn btn-primary text-uppercase" id="zoi_btn_next_nominee1" style="display: inline-block" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Placing request...">Next</button>*@
+                            <button type="button" id="btn_submit" class="button text-uppercase" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i>Placing request...">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+

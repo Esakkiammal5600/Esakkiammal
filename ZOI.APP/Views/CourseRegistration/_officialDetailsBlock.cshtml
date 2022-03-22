@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@model CoursePhase1
+
+        <div class="card">
+            <div class="card-title">
+                <h5>Official Details</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <label>Occupation</label>
+                        @Html.DropDownListFor(e => e.Occupation,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select Occupation--",Value="0" },
+                             new SelectListItem() {Text="Farmer",Value="1"},
+                         new SelectListItem() {Text="Postman",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_occupation" })
+                        @Html.ValidationMessageFor(e => e.Occupation, "", new { @class = "validation-message" })
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.OfficeNumber, new { @class = "form-control", id = "txt_office_number", placeholder = "Office Number", @autocomplete = "none", @onkeypress = "fnNumeric(event)" })
+                            @Html.LabelFor(e => e.OfficeNumber, new { @for = "txt_office_number" })
+                            @Html.ValidationMessageFor(e => e.OfficeNumber, "", new { @class = "validation-message" })
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.OfficeAddress, new { @class = "form-control", id = "txt_office_address", placeholder = "Office Address", @autocomplete = "none" })
+                            @Html.LabelFor(e => e.OfficeAddress, new { @for = "txt_office_address" })
+                            @Html.ValidationMessageFor(e => e.OfficeAddress, "", new { @class = "validation-message" })
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <label>Office State</label>
+                        @Html.DropDownListFor(e => e.OfficeState,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select State--",Value="" },
+                             new SelectListItem() {Text="Tamilnadu",Value="1"},
+                         new SelectListItem() {Text="Kerala",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_office_state" })
+                        @Html.ValidationMessageFor(e => e.OfficeState, "", new { @class = "validation-message" })
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <label>Office City</label>
+                        @Html.DropDownListFor(e => e.OfficeCity,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select City--",Value="" },
+                             new SelectListItem() {Text="Tirunelveli",Value="1"},
+                         new SelectListItem() {Text="Trivandrum",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_office_city" })
+                        @Html.ValidationMessageFor(e => e.OfficeCity, "", new { @class = "validation-message" })
+                    </div>
+                </div>
+            </div>
+        </div>

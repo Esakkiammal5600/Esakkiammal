@@ -1,0 +1,145 @@
+﻿@*    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860*@@model CoursePhase1
+        <div class="card">
+            <div class="card-title">
+                <h5>Personal Details</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Name, new { @class = "form-control", id = "txt_name", placeholder = "Name", autocomplete = "none", @onkeypress = "fnAlphabetWithSpace(event)" })
+                            @Html.LabelFor(e => e.Name, new { @for = "txt_name" })
+                            @Html.ValidationMessageFor(e => e.Name,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.DOB, new { @class = "form-control date-picker", id = "txt_dob", placeholder = "Date Of Birth", autocomplete = "none" })
+                            @*@Html.LabelFor(e => e.DOB, new { @for = "txt_dob" })*@
+                            <label for="txt_dob">DOB</label>
+                            @Html.ValidationMessageFor(e => e.DOB,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Email, new { @class = "form-control", id = "txt_email", placeholder = "Email", autocomplete = "none", @onkeypress = "fnCheckEmail(event)" })
+                            @Html.LabelFor(e => e.Email, new { @for = "txt_email" })
+                            @Html.ValidationMessageFor(e => e.Email,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height pt-3" id="div_gender" style="min-height:80px">
+                        <label class="control-label">Gender</label>
+                        <div class="row justify-content-start">
+                            <div class="col-sm-4 col-md-4 col-xl-4 col-lg-4">
+                                @Html.RadioButtonFor(e => e.Gender, "Male", new { id = "rb_male", @checked = "checked" })<span>Male</span>
+                            </div>
+                            <div class="col-sm-5 col-xl-4">
+                                @Html.RadioButtonFor(e => e.Gender, "Female", new { id = "rb_female" })<span>Female</span>
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(e => e.Gender, "", new { @class = "validation-message" })
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height pt-3" id="div_marital_status">
+                        <label class="control-label">Marital Status</label>
+                        <div class="row justify-content-start">
+                            <div class="col col-md-12 col-xl-4 col-lg-5">
+                                @Html.RadioButtonFor(e => e.MaritalStatus, "Married", new { id = "rb_married", @checked = "true" })<span>Married</span>
+                            </div>
+                            <div class="col-md-12 col-sm-4 col-xl-5 col-lg-5">
+                                @Html.RadioButtonFor(e => e.MaritalStatus, "Unmarried", new { id = "rb_unmarried" })<span>Unmarried</span>
+                            </div>
+                            <div class="col">
+                                @Html.RadioButtonFor(e => e.MaritalStatus, "Single", new { id = "rb_single" })<span>Single</span>
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(e => e.MaritalStatus, "", new { @class = "validation-message" })
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Age, new { @class = "form-control", id = "txt_age", placeholder = "Age", autocomplete = "none" })
+                            @Html.LabelFor(e => e.Age, new { @for = "txt_age" })
+                            @Html.ValidationMessageFor(e => e.Age,"",new {@class="validation-message"})
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        @Html.LabelFor(e => e.Qualification)
+                        @Html.DropDownListFor(e => e.Qualification,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select Qualification--",Value="" },
+                             new SelectListItem() {Text="UG",Value="1"},
+                         new SelectListItem() {Text="PG",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_qualification" })
+                        @Html.ValidationMessageFor(e => e.Qualification, "", new { @class = "validation-message" })
+                        <span class="spn-validation-error"></span>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Mobile, new { @class = "form-control", id = "txt_mobile", placeholder = "Mobile", autocomplete = "none", @onkeypress = "fnNumeric(event)" })
+                            @Html.LabelFor(e => e.Mobile, new { @for = "txt_mobile" })
+                            @Html.ValidationMessageFor(e => e.Mobile, "", new { @class = "validation-message" })
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Telephone, new { @class = "form-control", id = "txt_telephone", placeholder = "Telephone", autocomplete = "none", @onkeypress = "fnNumeric(event)" })
+                            @Html.LabelFor(e => e.Telephone, new { @for = "txt_telephone" })
+                            @Html.ValidationMessageFor(e => e.Telephone,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        @Html.LabelFor(e => e.Designation)
+                        @Html.DropDownListFor(e => e.Designation,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select Designation--",Value="" },
+                             new SelectListItem() {Text="Primary Teacher",Value="1"},
+                         new SelectListItem() {Text="Student",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_designation" })
+                        @Html.ValidationMessageFor(e => e.Designation, "", new { @class = "validation-message" })
+                        <span class="spn-validation-error"></span>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Address, new { @class = "form-control", id = "txt_address", placeholder = "Address", autocomplete = "none" })
+                            @Html.LabelFor(e => e.Address, new { @for = "txt_address" })
+                            @Html.ValidationMessageFor(e => e.Address,"",new {@class="validation-message"})
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        @Html.LabelFor(e => e.State)
+                        @Html.DropDownListFor(e => e.State,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select State--",Value="" },
+                             new SelectListItem() {Text="Tamilnadu",Value="1"},
+                         new SelectListItem() {Text="Kerala",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_state" })
+                         @Html.ValidationMessageFor(e => e.State,"",new {@class="validation-message"})
+                        <span class="spn-validation-error"></span>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        @Html.LabelFor(e => e.City)
+                        @Html.DropDownListFor(e => e.City,
+                         new List<SelectListItem>{
+                             new SelectListItem(){Text="--Select City--",Value="" },
+                             new SelectListItem() {Text="Tirunelveli",Value="1"},
+                         new SelectListItem() {Text="Trivandrum",Value="2"}
+                   }, new { @class = "form-control form-select", id = "txt_city" })
+                        @Html.ValidationMessageFor(e => e.City, "", new { @class = "validation-message" })
+                        <span class="spn-validation-error"></span>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 component-height">
+                        <div class="form-floating">
+                            @Html.TextBoxFor(e => e.Pincode, new { @class = "form-control", id = "txt_pincode", placeholder = "Pincode", autocomplete = "none", @onkeypress = "fnNumeric(event)" })
+                            @Html.LabelFor(e => e.Pincode, new { @for = "txt_pincode" })
+                            @Html.ValidationMessageFor(e => e.Pincode,"", new { @class = "validation-message" })
+                            <span class="spn-validation-error"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

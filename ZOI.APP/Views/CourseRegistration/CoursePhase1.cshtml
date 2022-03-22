@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "CoursePhase1";
+}
+
+@model CoursePhase1
+
+<section class="index-hero block-first">
+    <div class="container">
+        <div class="row row-hero">
+            <div class="w-100">
+                @*<h1>RISHI SAMSKRUTI VIDYA KENDRA,CPTC,PUNE 411005</h1>*@
+                <h3 style="text-align:center">APPLICATION FOR THE SSY TEACHER TRAINING COURSE - PHASE-I</h3>
+            </div>
+            <div>
+                <form id="form">
+                    @Html.Partial("_personalDetailsBlock")
+                    @Html.Partial("_officialDetailsBlock")
+                    @Html.Partial("_courseDetailsBlock")
+                    @Html.Partial("_addCourseBlock")
+                    @Html.Partial("_attachmentDetailsBlock")
+                    @Html.Partial("_signRemarkBlock")
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts {
+    <script type="text/javascript">
+        $(function() {
+            $("#txt_email").on("keyup change", function () {
+                if ($(this).val() != null && $(this).val().length !=0) {
+                    var result = fnRegexEmail($(this).val());                
+                    if (result != null && result == false) {
+                        $(this).parent().find(".spn-validation-error").text("Kindly enter valid email");
+                    } else {
+                        $(this).parent().find(".spn-validation-error").text("");
+                    }
+                } else {
+                    $(this).parent().find(".spn-validation-error").text("Kindly enter email");
+                }
+                
+            });
+            $("#txt_mobile").on("keyup change", function () {
+                if ($(this).val() != null && $(this).val().length != 0) {
+                    var result = fnRegexMobile($(this).val());
+                    if (result != null && result == false) {
+                        $(this).parent().find(".spn-validation-error").text("Kindly enter valid mobile");
+                    } else {
+                        $(this).parent().find(".spn-validation-error").text("");
+                    }
+                } else {
+                    $(this).parent().find(".spn-validation-error").text("Kindly enter mobile");
+                }
+            });
+        });       
+    </script>
+}
+
+
+
+
+

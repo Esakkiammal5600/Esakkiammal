@@ -1,0 +1,324 @@
+﻿
+.card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-top: 2%;
+}
+
+.card-title {
+    margin-left: 19px;
+    margin-top: 2%;
+}
+
+.form-control {
+    box-shadow: none !important;
+    border: none !important;
+    border-bottom: 1px solid !important;
+    border-radius: 0px;
+    color: #18214d !important;
+}
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+    position: relative;
+    top: 4px;
+}
+
+    input:checked {
+        border: 6px solid #8f68fb !important;
+    }
+
+
+.form-floating > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem;
+    padding: 2em 0px 1em 0px !important;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+}
+
+.form-floating > .form-control {
+    padding: 3rem 0px 1rem 3px !important;
+}
+
+.div-radio {
+    margin-top: 10%;
+}
+
+.mobile-margin {
+    margin-top: 39px;
+}
+
+.field-margin {
+    margin-top: 10%;
+}
+
+.address-margin {
+    margin-top: 40px;
+}
+
+.tel-margin{
+    margin-top:49px;
+}
+
+.state-margin {
+    margin-top: 35px;
+}
+
+img {
+    float: right;
+    margin-top: -9%;
+}
+
+#ui-datepicker-div {
+    width: 27% !important;
+}
+
+.div-remark {
+    margin-top: 38px;
+}
+
+.recommend-text {
+    text-align: center;
+}
+
+.div-from-to {
+    display: flex;
+}
+
+.course-content {
+    margin-left: 15%;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+.lbl-oath {
+    margin-left: 11px;
+}
+
+table {
+    width: 100%;
+}
+
+.div-remark {
+    margin-top: 4%;
+}
+
+.recommend-text {
+    text-align: center;
+}
+
+.course-detail {
+    display: flex;
+}
+
+.fourth-attach-text {
+    margin-top: 12px;
+}
+
+.fourth-attach-textfield {
+    margin-top: 16px;
+}
+
+.ddl-margin {
+    margin-top: -5px;
+}
+
+.ddl-occupation-margin {
+    margin-top: 21px;
+}
+
+.course-title {
+    margin-bottom: 22px;
+    font-weight: 500;
+    color: #18214d !important;
+}
+
+.div-course-Detail {
+    margin-top: -2%;
+}
+
+.course-date {
+    margin-top: 0%;
+}
+
+.div-office-number{
+    margin-top:26px;
+}
+
+.button {
+    padding: 5px 21px !important;  
+    float: right;
+}
+
+.div-oath{
+    margin-top:-1%;
+}
+
+.img-add{
+    float:right;
+    margin-top:-4%;
+}
+
+@media  screen and (min-width: 320px) {
+    .ui-datepicker-trigger {
+        margin-top: -10%;
+        width: 23px;
+        margin-left: 94%;
+    }
+    #div_marital_status {
+        height: 107px !important;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .ui-datepicker-trigger {
+        margin-top: -7%;
+        width: 23px;
+        margin-left: 94%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .ui-datepicker-trigger {
+        margin-top: -8%;
+        width: 23px;
+        margin-left: 94%;
+    }
+    #div_marital_status {
+        height: 120px !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .ui-datepicker-trigger {
+        margin-top: -9%;
+        width: 23px;
+        margin-left: 94%;
+    }
+    #rb_unmarried {
+        margin-left: -30px;
+    }
+
+    #rb_single {
+        margin-left: -43px;
+    }
+    #div_marital_status {
+        height: 80px !important;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .ui-datepicker-trigger {
+        margin-top: -9%;
+        width: 23px;
+        margin-left: 94%;
+    }
+    #rb_unmarried {
+        margin-left: -5px;
+    }
+
+    #rb_single {
+        margin-left: -14px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .ui-datepicker-trigger {
+        margin-top: -9%;
+        width: 23px;
+        margin-left: 94%;
+    }
+
+    #rb_unmarried {
+        margin-left: -5px;
+    }
+
+    #rb_single {
+        margin-left: -20px;
+    }
+}
+
+select {
+    margin-top: -5px!important;
+}
+.row > .component-height {
+    height: 84px;
+}
+
+    .cancel-icon {
+        margin-top: 22%;
+    }
+
+/*BWG Attended*/
+.div-cancel-icon {
+    display: flex;
+    justify-content: end;
+    margin-top: -21%;
+}
+
+.txt-place1,.txt-date1{
+    margin-left:12px;
+}
+
+#upload_certificate, #file_certificate, #upload_signature {
+    border: 1px solid #ced4da !important;
+}
+
+#rb_yse-no {
+    display: flex;
+    align-items: center;
+}
+
+.p-at{
+    margin-top:7%;
+}
+.spn-validation-error {
+    font-size: 10px !important;
+    color: red !important;
+}
+
+.div-confirm{
+    display:flex;
+}
+
+#cb_confirm{
+    margin-top:5px;
+}
+
+.p-confirm{
+    margin-left:1%;
+}
+
+#txt_qualification option:hover {
+    background-color: black;
+}
+
+.validation-message{
+    color:red;
+}
+
+.form-select option:hover {
+    background-color: yellow !important;
+}
+
+#cb_confirm {
+   accent-color:#8f68fb;
+}
+
+
